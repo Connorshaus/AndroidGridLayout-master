@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AndroidGridLayout-master.iml" filepath="$PROJECT_DIR$/AndroidGridLayout-master.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/AndroidGridLayout-master-app.iml" filepath="$PROJECT_DIR$/app/AndroidGridLayout-master-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CEN4020 Project.iml" filepath="$PROJECT_DIR$/CEN4020 Project.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
