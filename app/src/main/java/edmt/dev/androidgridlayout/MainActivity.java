@@ -58,10 +58,37 @@ public class MainActivity extends AppCompatActivity {
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    if(finalI == 0) // Activate My Profile
+                    {
+                        Intent intent = new Intent (MainActivity.this, ActivityOne.class);
+                        startActivity(intent);
+                    }
+                    else if(finalI == 1) // Activate Questionnaire
+                    {
+                        Intent intent = new Intent (MainActivity.this, Questionnaire.class);
+                        startActivity(intent);
+                    }
+                    else if(finalI == 2) // Activate My Health
+                    {
+                        Intent intent = new Intent (MainActivity.this, MyHealth.class);
+                        startActivity(intent);
+                    }
+                    else if(finalI == 3) // Activate Motivation
+                    {
+                        Intent intent = new Intent (MainActivity.this, Motivation.class);
+                        startActivity(intent);
+                    }
+                    else if(finalI == 4) // Activate Chat
+                    {
+                        Intent intent = new Intent (MainActivity.this, Chat.class);
+                        startActivity(intent);
+                    }
+                    else if(finalI == 5) // Activate About Us
+                    {
+                        Intent intent = new Intent (MainActivity.this, AboutUs.class);
+                        startActivity(intent);
+                    }
 
-                    Intent intent = new Intent(MainActivity.this,ActivityOne.class);
-                    intent.putExtra("info","This is activity from card item index  "+finalI);
-                    startActivity(intent);
 
                 }
             });
