@@ -15,4 +15,8 @@
     <string name="aboutText">This company was founded by Connor Hausmann, Sarah Jiwani, Cooper Hauck, and Joshua John
         . It was founded September 2019. The goal from the very beginning was to boost peoples moods.
     With mental health being a growing concern, we sought out to make an app that could possibly help. Enjoy!</string>
+    <string name="type_here">Type here...</string>
+    <string name="send">Send</string>
+    <string name="chat_message_will_appear_here">Chat Message will appear here ...</string>
+    <string name="ReceivingUser">Receiving User</string>
 </resources>
