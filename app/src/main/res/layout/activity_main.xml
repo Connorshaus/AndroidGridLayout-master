@@ -12,7 +12,7 @@
         android:background="@drawable/bg"
         android:weightSum="10"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
     <RelativeLayout
         android:layout_weight="2"
@@ -67,11 +67,12 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:src="@drawable/myprof"
-                    android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="130sp"
-                    android:scaleType="fitStart"/>
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/profileDescip"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/myprof" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -110,11 +111,12 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:src="@drawable/questionnaire"
-                    android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="130sp"
-                    android:scaleType="fitStart"/>
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/questinnaireDescrip"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/questionnaire" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -156,11 +158,12 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:src="@drawable/healthsummary"
-                    android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="130sp"
-                    android:scaleType="fitStart"/>
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/myHealthDescrip"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/healthsummary" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -244,11 +247,12 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:src="@drawable/chat"
-                    android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="130sp"
-                    android:scaleType="fitStart"/>
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/chat"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/chat" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -285,11 +289,12 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:src="@drawable/aboutus"
-                    android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="130sp"
-                    android:scaleType="fitStart"/>
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@string/aboutUsDescrip"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/aboutus" />
 
                 <TextView
                     android:layout_width="wrap_content"

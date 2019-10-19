@@ -6,6 +6,13 @@
     <string name="movtivation">Motivation</string>
     <string name="chat">Chat</string>
     <string name="aboutUs">About Us</string>
-    <string name="motivationDesrip">Movtivation secton for you to become inspired and boost your mood.</string>
-    <string name="chatDesrip"></string>
+    <string name="motivationDesrip">Motivation secton for you to become inspired and boost your mood.</string>
+    <string name="chatDesrip">Chat that enables you to chat with professionals.</string>
+    <string name="aboutUsDescrip">About us page that shows information about us and our goals.</string>
+    <string name="myHealthDescrip">See your about usage and statistics here.</string>
+    <string name="questinnaireDescrip">Daily questionnaire that records how your feeling.</string>
+    <string name="profileDescip">Your profile. Has your information and what you want people to see.</string>
+    <string name="aboutText">This company was founded by Connor Hausmann, Sarah Jiwani, Cooper Hauck, and Joshua John
+        . It was founded September 2019. The goal from the very beginning was to boost peoples moods.
+    With mental health being a growing concern, we sought out to make an app that could possibly help. Enjoy!</string>
 </resources>
