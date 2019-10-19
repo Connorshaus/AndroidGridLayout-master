@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Mood Booster</string>
-    <string name="my_question">yooooooooo</string>
+    <string name="profile">My Profile</string>
+    <string name="questionnaire">Questionnaire</string>
+    <string name="health">My Health</string>
+    <string name="movtivation">Motivation</string>
+    <string name="chat">Chat</string>
+    <string name="aboutUs">About Us</string>
+    <string name="motivationDesrip">Movtivation secton for you to become inspired and boost your mood.</string>
+    <string name="chatDesrip"></string>
 </resources>
