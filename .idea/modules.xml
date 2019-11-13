@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidGridLayout-master.iml" filepath="$PROJECT_DIR$/AndroidGridLayout-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/AndroidGridLayout-masterrrr.iml" filepath="$PROJECT_DIR$/AndroidGridLayout-masterrrr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/AndroidGridLayout-masterrrr-app.iml" filepath="$PROJECT_DIR$/app/AndroidGridLayout-masterrrr-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
