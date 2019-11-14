@@ -17,12 +17,12 @@
         android:layout_marginBottom="40dp">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/score_text"
+            android:layout_width="330dp"
             android:layout_height="wrap_content"
-            android:text="Score"
-            android:textSize="20sp"
             android:layout_alignParentLeft="true"
-            android:id="@+id/score_text" />
+            android:text="@string/quizDirections"
+            android:textSize="15sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -37,7 +37,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:text="Which thing is alive?"
+        android:text="@string/sampleQuestion"
         android:textSize="20sp"
         android:padding="8dp"
         android:layout_marginBottom="40dp"
@@ -46,7 +46,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="bird"
+        android:text="@string/sampleOption1"
         android:background="#0091EA"
         android:textColor="#fff"
         android:padding="8dp"
@@ -56,7 +56,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="door"
+        android:text="@string/sampleOption2"
         android:background="#0091EA"
         android:textColor="#fff"
         android:padding="8dp"
@@ -66,7 +66,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="rock"
+        android:text="@string/sampleOption3"
         android:background="#0091EA"
         android:textColor="#fff"
         android:padding="8dp"
@@ -76,7 +76,27 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="quit"
+        android:text="@string/sampleOption4"
+        android:background="#0091EA"
+        android:textColor="#fff"
+        android:padding="8dp"
+        android:layout_marginBottom="24dp"
+        android:id="@+id/choice4"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sampleOption5"
+        android:background="#0091EA"
+        android:textColor="#fff"
+        android:padding="8dp"
+        android:layout_marginBottom="24dp"
+        android:id="@+id/choice5"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/quitOption"
         android:background="#871C1C"
         android:textColor="#fff"
         android:padding="8dp"

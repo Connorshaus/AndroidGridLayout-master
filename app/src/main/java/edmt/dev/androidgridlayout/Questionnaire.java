@@ -6,6 +6,12 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Button;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 public class Questionnaire extends AppCompatActivity {
 
     private QuestionLibrary mQuestionLibrary = new QuestionLibrary();
@@ -15,10 +21,14 @@ public class Questionnaire extends AppCompatActivity {
     private Button mButtonChoice1;
     private Button mButtonChoice2;
     private Button mButtonChoice3;
+    private Button mButtonChoice4;
+    private Button mButtonChoice5;
+    private Button mButtonExit;
 
-    private String mAnswer;
     private int mScore = 0;
     private int mQuestionNumber = 0;
+
+    private DatabaseReference myRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +40,12 @@ public class Questionnaire extends AppCompatActivity {
         mButtonChoice1 = (Button)findViewById(R.id.choice1);
         mButtonChoice2 = (Button)findViewById(R.id.choice2);
         mButtonChoice3 = (Button)findViewById(R.id.choice3);
+        mButtonChoice4 = (Button)findViewById(R.id.choice4);
+        mButtonChoice5 = (Button)findViewById(R.id.choice5);
+        mButtonExit = (Button)findViewById(R.id.quit);
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("questionnaire score");
 
         updateQuestion();
 
@@ -37,15 +53,10 @@ public class Questionnaire extends AppCompatActivity {
         mButtonChoice1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mButtonChoice1.getText() == mAnswer){
-                    mScore = mScore + 1;
-                    updateScore(mScore);
-                    updateQuestion();
-                }
-                else
-                {
-                    updateQuestion();
-                }
+                mScore = mScore + 1;
+                updateScore(mScore);
+                if (mQuestionNumber == 10){myRef.setValue(mScore);}
+                updateQuestion();
             }
         });
         //End of Button1
@@ -54,15 +65,10 @@ public class Questionnaire extends AppCompatActivity {
         mButtonChoice2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mButtonChoice2.getText() == mAnswer){
-                    mScore = mScore + 1;
-                    updateScore(mScore);
-                    updateQuestion();
-                }
-                else
-                {
-                    updateQuestion();
-                }
+                mScore = mScore + 2;
+                updateScore(mScore);
+                if (mQuestionNumber == 10){myRef.setValue(mScore);}
+                updateQuestion();
             }
         });
         //End of Button2
@@ -71,31 +77,70 @@ public class Questionnaire extends AppCompatActivity {
         mButtonChoice3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mButtonChoice3.getText() == mAnswer){
-                    mScore = mScore + 1;
-                    updateScore(mScore);
-                    updateQuestion();
-                }
-                else
-                {
-                    updateQuestion();
-                }
+                mScore = mScore + 3;
+                updateScore(mScore);
+                if (mQuestionNumber == 10){myRef.setValue(mScore);}
+                updateQuestion();
             }
         });
         //End of Button3
+
+        //Button4 Listener
+        mButtonChoice4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mScore = mScore + 4;
+                updateScore(mScore);
+                if (mQuestionNumber == 10){myRef.setValue(mScore);}
+                updateQuestion();
+            }
+        });
+        //End of Button4
+
+        //Button5 Listener
+        mButtonChoice5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mScore = mScore + 5;
+                updateScore(mScore);
+                if (mQuestionNumber == 10){myRef.setValue(mScore);}
+                updateQuestion();
+            }
+        });
+        //End of Button5
+
+        //Button Exit Listener
+        mButtonExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.exit(0);
+            }
+        });
+        //End of Button Exit
+
+
     };
+
     private void updateQuestion(){
         mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
         mButtonChoice1.setText(mQuestionLibrary.getChoice1(mQuestionNumber));
         mButtonChoice2.setText(mQuestionLibrary.getChoice2(mQuestionNumber));
         mButtonChoice3.setText(mQuestionLibrary.getChoice3(mQuestionNumber));
+        mButtonChoice4.setText(mQuestionLibrary.getChoice4(mQuestionNumber));
+        mButtonChoice5.setText(mQuestionLibrary.getChoice5(mQuestionNumber));
 
-        mAnswer = mQuestionLibrary.getCorrectAnswer(mQuestionNumber);
         mQuestionNumber++;
     }
 
     private void updateScore(int point){
         mScoreView.setText("" + mScore);
     }
+
+    private void updateFire(){
+        myRef.push().setValue(mScore);
+    }
+
 }
 
+//databaseReference.child("users").push().setValue(userInformation)
+//myRef.child(questionnaire score").push().setValue(mScore);
