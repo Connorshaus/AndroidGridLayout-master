@@ -55,8 +55,8 @@ public class Questionnaire extends AppCompatActivity {
             public void onClick(View view) {
                 mScore = mScore + 1;
                 updateScore(mScore);
+                if (mQuestionNumber == 10){myRef.setValue(mScore);}
                 updateQuestion();
-                myRef.setValue(mScore);
             }
         });
         //End of Button1
@@ -67,8 +67,8 @@ public class Questionnaire extends AppCompatActivity {
             public void onClick(View view) {
                 mScore = mScore + 2;
                 updateScore(mScore);
+                if (mQuestionNumber == 10){myRef.setValue(mScore);}
                 updateQuestion();
-                myRef.setValue(mScore);
             }
         });
         //End of Button2
@@ -79,8 +79,8 @@ public class Questionnaire extends AppCompatActivity {
             public void onClick(View view) {
                 mScore = mScore + 3;
                 updateScore(mScore);
+                if (mQuestionNumber == 10){myRef.setValue(mScore);}
                 updateQuestion();
-                myRef.setValue(mScore);
             }
         });
         //End of Button3
@@ -91,8 +91,8 @@ public class Questionnaire extends AppCompatActivity {
             public void onClick(View view) {
                 mScore = mScore + 4;
                 updateScore(mScore);
+                if (mQuestionNumber == 10){myRef.setValue(mScore);}
                 updateQuestion();
-                myRef.setValue(mScore);
             }
         });
         //End of Button4
@@ -103,8 +103,8 @@ public class Questionnaire extends AppCompatActivity {
             public void onClick(View view) {
                 mScore = mScore + 5;
                 updateScore(mScore);
+                if (mQuestionNumber == 10){myRef.setValue(mScore);}
                 updateQuestion();
-                myRef.setValue(mScore);
             }
         });
         //End of Button5
@@ -117,6 +117,7 @@ public class Questionnaire extends AppCompatActivity {
             }
         });
         //End of Button Exit
+
 
     };
 
@@ -135,5 +136,11 @@ public class Questionnaire extends AppCompatActivity {
         mScoreView.setText("" + mScore);
     }
 
+    private void updateFire(){
+        myRef.push().setValue(mScore);
+    }
+
 }
 
+//databaseReference.child("users").push().setValue(userInformation)
+//myRef.child(questionnaire score").push().setValue(mScore);
