@@ -30,9 +30,6 @@ public class QuestionLibrary {
             {"Strongly Disagree", "Disagree", "Undecided", "Agree", "Strongly Agree"}
     };
 
-    //correct answers array
-    private String mCorrectAnswers[] = {"Sonia", "3:35", "Mon/Wed", "Sunday"};
-
     public String getQuestion(int a) {
         String question = mQuestions[a];
         return question;

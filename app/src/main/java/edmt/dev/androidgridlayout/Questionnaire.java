@@ -6,6 +6,12 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Button;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 public class Questionnaire extends AppCompatActivity {
 
     private QuestionLibrary mQuestionLibrary = new QuestionLibrary();
@@ -22,6 +28,8 @@ public class Questionnaire extends AppCompatActivity {
     private int mScore = 0;
     private int mQuestionNumber = 0;
 
+    private DatabaseReference myRef;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +44,9 @@ public class Questionnaire extends AppCompatActivity {
         mButtonChoice5 = (Button)findViewById(R.id.choice5);
         mButtonExit = (Button)findViewById(R.id.quit);
 
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("questionnaire score");
+
         updateQuestion();
 
         //Button1 Listener
@@ -45,6 +56,7 @@ public class Questionnaire extends AppCompatActivity {
                 mScore = mScore + 1;
                 updateScore(mScore);
                 updateQuestion();
+                myRef.setValue(mScore);
             }
         });
         //End of Button1
@@ -56,6 +68,7 @@ public class Questionnaire extends AppCompatActivity {
                 mScore = mScore + 2;
                 updateScore(mScore);
                 updateQuestion();
+                myRef.setValue(mScore);
             }
         });
         //End of Button2
@@ -67,6 +80,7 @@ public class Questionnaire extends AppCompatActivity {
                 mScore = mScore + 3;
                 updateScore(mScore);
                 updateQuestion();
+                myRef.setValue(mScore);
             }
         });
         //End of Button3
@@ -78,6 +92,7 @@ public class Questionnaire extends AppCompatActivity {
                 mScore = mScore + 4;
                 updateScore(mScore);
                 updateQuestion();
+                myRef.setValue(mScore);
             }
         });
         //End of Button4
@@ -89,6 +104,7 @@ public class Questionnaire extends AppCompatActivity {
                 mScore = mScore + 5;
                 updateScore(mScore);
                 updateQuestion();
+                myRef.setValue(mScore);
             }
         });
         //End of Button5
@@ -101,7 +117,9 @@ public class Questionnaire extends AppCompatActivity {
             }
         });
         //End of Button Exit
+
     };
+
     private void updateQuestion(){
         mQuestionView.setText(mQuestionLibrary.getQuestion(mQuestionNumber));
         mButtonChoice1.setText(mQuestionLibrary.getChoice1(mQuestionNumber));
@@ -110,12 +128,12 @@ public class Questionnaire extends AppCompatActivity {
         mButtonChoice4.setText(mQuestionLibrary.getChoice4(mQuestionNumber));
         mButtonChoice5.setText(mQuestionLibrary.getChoice5(mQuestionNumber));
 
-        // mAnswer = mQuestionLibrary.getCorrectAnswer(mQuestionNumber);
         mQuestionNumber++;
     }
 
     private void updateScore(int point){
         mScoreView.setText("" + mScore);
     }
+
 }
 
