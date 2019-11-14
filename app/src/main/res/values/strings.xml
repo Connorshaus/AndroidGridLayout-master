@@ -27,4 +27,14 @@
     <string name="sampleOption4">answer4</string>
     <string name="sampleOption5">answer5</string>
     <string name="quitOption">quit</string>
+    <string name="disclaimer">Disclaimer: MoodBooster is intended solely for personal use to potentially identify fluctuations
+        in mood and is not designed to constitute advice as to your mental health or to provide a diagnosis. An accurate diagnosis
+        for mood disorders and other psychiatric disorders can only be made by a physician or other qualified mental health
+        professional after a complete evaluation, including a physical exam, to rule out any other illnesses or conditions that may
+        be the cause of the symptoms. By using features of this application, you agree not to hold MoodBooster creators liable,
+        or make any claims or claim damages of any kind whatsoever, including claims or damages arising out of a decision or action
+        that might be related to the information contained on this application. Such damages include, without limitation, direct,
+        indirect, special, general, incidental or consequential damages. Further, you agree to indemnify and hold harmless the
+        application partners, sponsors, their staff or consultants for any claims or damages arising out of your use of this application,
+        whether you commence such claims or otherwise.</string>
 </resources>
