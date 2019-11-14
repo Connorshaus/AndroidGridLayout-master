@@ -20,4 +20,11 @@
     <string name="chat_message_will_appear_here">Chat Message will appear here ...</string>
     <string name="ReceivingUser">Receiving User</string>
     <string name="quizDirections">Please choose the answer that best describes how you feel this statement TODAY.</string>
+    <string name="sampleQuestion">Which thing is alive?</string>
+    <string name="sampleOption1">answer1</string>
+    <string name="sampleOption2">answer2</string>
+    <string name="sampleOption3">answer3</string>
+    <string name="sampleOption4">answer4</string>
+    <string name="sampleOption5">answer5</string>
+    <string name="quitOption">quit</string>
 </resources>
