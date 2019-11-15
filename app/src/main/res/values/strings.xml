@@ -3,8 +3,9 @@
     <string name="profile">My Profile</string>
     <string name="questionnaire">Questionnaire</string>
     <string name="health">My Health</string>
-    <string name="movtivation">Motivation</string>
+    <string name="motivation">Motivation</string>
     <string name="chat">Chat</string>
+    <string name="register">Register</string>
     <string name="aboutUs">About Us</string>
     <string name="motivationDesrip">Motivation secton for you to become inspired and boost your mood.</string>
     <string name="chatDesrip">Chat that enables you to chat with professionals.</string>
