@@ -7,14 +7,14 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.GridLayout;
 
-public class MainActivity extends AppCompatActivity {
+public class GuestView extends AppCompatActivity {
 
     GridLayout mainGrid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_guest_view);
 
         mainGrid = (GridLayout) findViewById(R.id.mainGrid);
 
@@ -32,38 +32,21 @@ public class MainActivity extends AppCompatActivity {
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(finalI == 0) // Activate My Profile
+                    if(finalI == 0) // Activate My Register
                     {
-                        Intent intent = new Intent (MainActivity.this, ActivityOne.class);
+                        Intent intent = new Intent (GuestView.this, Register.class);
                         startActivity(intent);
                     }
-                    else if(finalI == 1) // Activate Questionnaire
+                    else if(finalI == 1) // Activate Motivation
                     {
-                        Intent intent = new Intent (MainActivity.this, Questionnaire.class);
+                        Intent intent = new Intent (GuestView.this, MotivationHome.class);
                         startActivity(intent);
                     }
-                    else if(finalI == 2) // Activate My Health
+                    else if(finalI == 2) // Activate About Us
                     {
-                        Intent intent = new Intent (MainActivity.this, MyHealth.class);
+                        Intent intent = new Intent (GuestView.this, AboutUs.class);
                         startActivity(intent);
                     }
-                    else if(finalI == 3) // Activate Motivation
-                    {
-                        Intent intent = new Intent (MainActivity.this, MotivationHome.class);
-                        startActivity(intent);
-                    }
-                    else if(finalI == 4) // Activate Chat
-                    {
-                        Intent intent = new Intent (MainActivity.this, Chat.class);
-                        startActivity(intent);
-                    }
-                    else if(finalI == 5) // Activate About Us
-                    {
-                        Intent intent = new Intent (MainActivity.this, AboutUs.class);
-                        startActivity(intent);
-                    }
-
-
                 }
             });
         }

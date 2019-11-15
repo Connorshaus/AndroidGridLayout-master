@@ -3,8 +3,9 @@
     <string name="profile">My Profile</string>
     <string name="questionnaire">Questionnaire</string>
     <string name="health">My Health</string>
-    <string name="movtivation">Motivation</string>
+    <string name="motivation">Motivation</string>
     <string name="chat">Chat</string>
+    <string name="register">Register</string>
     <string name="aboutUs">About Us</string>
     <string name="motivationDesrip">Motivation secton for you to become inspired and boost your mood.</string>
     <string name="chatDesrip">Chat that enables you to chat with professionals.</string>
@@ -37,4 +38,13 @@
         indirect, special, general, incidental or consequential damages. Further, you agree to indemnify and hold harmless the
         application partners, sponsors, their staff or consultants for any claims or damages arising out of your use of this application,
         whether you commence such claims or otherwise.</string>
+    <string name="quoteList">Tough times don’t last. Tough people do. \n– Robert H. Schuller \n\n
+    Keep going. Everything you need will come to you at the perfect time. \n\n
+    You have to be at your strongest when you’re feeling at your weakest. \n\n
+    Never give up. Great things take time. Be patient. \n\n
+    It does not matter how slowly you go as long as you do not stop. \n– Confucius \n\n
+    Courage is one step ahead of fear. \n– Coleman Young \n\n
+    Pain is temporary. Quitting lasts forever. \n– Lance Armstrong \n\n
+    It’s not about perfect. It’s about effort. \n– Jillian Michaels \n\n
+    Challenges are what make life interesting. Overcoming them is what makes them meaningful. \n\n</string>
 </resources>
