@@ -1,12 +1,19 @@
 package edmt.dev.androidgridlayout;
 
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.Viewport;
 import com.jjoe64.graphview.series.DataPoint;
@@ -46,21 +53,29 @@ public class MyHealth extends AppCompatActivity {
         viewport.setMinX(minNumOfQuizesTaken);
         viewport.setMaxX(numOfQuizesTaken);
         viewport.setScrollable(false);
-        /*for(int i = 0; i <= 10; i++)
-        {
-            series.appendData(new DataPoint(i,i), false, 20);
-        }*/
-        /*double y, x;
+        FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final DatabaseReference myRef = database.getReference(currentFirebaseUser.getUid());
+        myRef.addValueEventListener(new ValueEventListener() {
+            int numOfScores;
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                numOfScores = (int) dataSnapshot.getChildrenCount() - 1;
+                if(dataSnapshot.exists())
+                {
+                    myRef.child("numOfScores").setValue(numOfScores);
+                }
+                else
+                {
+                    myRef.child("numOfScores").setValue(1);
+                }
+            }
 
-        x = -5.0;
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-        GraphView graph = (GraphView) findViewById(R.id.graph);
-        series = new LineGraphSeries<>();
-        for(int i = 0; i < 500; i++){
-            x = x + 0.1;
-            y = 1;
-            series.appendData(new DataPoint(x, y), true, 500);
-        }
-        graph.addSeries(series);*/
+            }
+        });
+
     }
 }

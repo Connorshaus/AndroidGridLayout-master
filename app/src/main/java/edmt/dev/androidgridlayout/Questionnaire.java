@@ -6,11 +6,15 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import edmt.dev.androidgridlayout.QuestionLibrary;
 
 public class Questionnaire extends AppCompatActivity {
 
@@ -45,7 +49,8 @@ public class Questionnaire extends AppCompatActivity {
         mButtonExit = (Button)findViewById(R.id.quit);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        myRef = database.getReference("questionnaire score");
+        FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
+        myRef = database.getReference(currentFirebaseUser.getUid());
 
         updateQuestion();
 
@@ -55,7 +60,7 @@ public class Questionnaire extends AppCompatActivity {
             public void onClick(View view) {
                 mScore = mScore + 1;
                 updateScore(mScore);
-                if (mQuestionNumber == 10){myRef.setValue(mScore);}
+                if (mQuestionNumber == 10){myRef.push().setValue(mScore);;}
                 updateQuestion();
             }
         });
@@ -67,7 +72,7 @@ public class Questionnaire extends AppCompatActivity {
             public void onClick(View view) {
                 mScore = mScore + 2;
                 updateScore(mScore);
-                if (mQuestionNumber == 10){myRef.setValue(mScore);}
+                if (mQuestionNumber == 10){myRef.push().setValue(mScore);;}
                 updateQuestion();
             }
         });
@@ -79,7 +84,7 @@ public class Questionnaire extends AppCompatActivity {
             public void onClick(View view) {
                 mScore = mScore + 3;
                 updateScore(mScore);
-                if (mQuestionNumber == 10){myRef.setValue(mScore);}
+                if (mQuestionNumber == 10){myRef.push().setValue(mScore);;}
                 updateQuestion();
             }
         });
@@ -91,7 +96,7 @@ public class Questionnaire extends AppCompatActivity {
             public void onClick(View view) {
                 mScore = mScore + 4;
                 updateScore(mScore);
-                if (mQuestionNumber == 10){myRef.setValue(mScore);}
+                if (mQuestionNumber == 10){myRef.push().setValue(mScore);;}
                 updateQuestion();
             }
         });
@@ -103,7 +108,7 @@ public class Questionnaire extends AppCompatActivity {
             public void onClick(View view) {
                 mScore = mScore + 5;
                 updateScore(mScore);
-                if (mQuestionNumber == 10){myRef.setValue(mScore);}
+                if (mQuestionNumber == 10){myRef.push().setValue(mScore);;}
                 updateQuestion();
             }
         });
@@ -141,6 +146,3 @@ public class Questionnaire extends AppCompatActivity {
     }
 
 }
-
-//databaseReference.child("users").push().setValue(userInformation)
-//myRef.child(questionnaire score").push().setValue(mScore);
