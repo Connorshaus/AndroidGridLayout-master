@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else if(finalI == 3) // Activate Motivation
                     {
-                        Intent intent = new Intent (MainActivity.this, Motivation.class);
+                        Intent intent = new Intent (MainActivity.this, MotivationHome.class);
                         startActivity(intent);
                     }
                     else if(finalI == 4) // Activate Chat
