@@ -6,6 +6,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.view.View;
 
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -28,7 +29,6 @@ public class Chat extends AppCompatActivity {
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         myRef = database.getReference("message");
-
         final TextView myText = findViewById(R.id.Text);
 
         // Read from the database
@@ -36,13 +36,16 @@ public class Chat extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                //myText.setText(dataSnapshot.getValue().toString());
+                myText.setText(dataSnapshot.getValue().toString());
                 String[] Messages = dataSnapshot.getValue().toString().split(",");
                 myText.setText("");
 
                 //String[] firstMessage = Messages[0].split("=");
                 //myText.append(firstMessage[2] + "\n");
-
+                String[] uniqueusers = {"User 1","User 2","User 3","User 4","User 5","User 6","User 7","User 8","User 9","User 10","User 11","User 12","User 13",
+                        "User 14","User 15","User 16","User 17","User 18","User19","User 20","User 21","User 22","User 23","User 24","User 25","User 26",
+                        "User 27","User 28","User 29","User 30"};
+                int c = -1;
                 for(int i = 0; i < Messages.length; i++)
                 {
                     int len = Messages.length - 1;
@@ -50,20 +53,24 @@ public class Chat extends AppCompatActivity {
                     if(i == len){
                         String last = finalMessage[1];
                         String lastMessage = last.substring(0,last.length() - 2);
-                        myText.append(lastMessage + "\n");
+                        myText.append(uniqueusers[c] + ": " + lastMessage + "\n");
                     }else {
                         if (finalMessage.length == 2) {
-                            myText.append(finalMessage[1] + "\n");
+                            myText.append(uniqueusers[c] + ": "+ finalMessage[1] + "\n");
                         }
                         if (finalMessage.length == 3) {
-                            myText.append(finalMessage[2] + "\n");
+                            c++;
+                            myText.append(uniqueusers[c] + ": "+ finalMessage[2] + "\n");
+
                         }
 
                     }
+
                     //myText.append(finalMessage[1] + "\n");
                 }
 
 
+                c = 0;
             }
 
             @Override
@@ -81,8 +88,14 @@ public class Chat extends AppCompatActivity {
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         EditText newText = findViewById(R.id.editText);
+
+        String[] uniqueusers = {"User 1","User 2","User 3","User 4","User 5","User 6","User 7","User 8","User 9","User 10","User 11","User 12","User 13",
+                "User 14","User 15","User 16","User 17","User 18","User19","User 20","User 21","User 22","User 23","User 24","User 25","User 26",
+                "User 27","User 28","User 29","User 30"};
+
         myRef.child(user.getUid()).push().setValue(newText.getText().toString());
         newText.setText("");
+
 
     }
 
