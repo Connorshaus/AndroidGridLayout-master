@@ -19,7 +19,6 @@ public class ActivityOne extends AppCompatActivity {
     String email = user.getEmail();
 
     Button mLogout;
-
     TextView textView9;
 
 
