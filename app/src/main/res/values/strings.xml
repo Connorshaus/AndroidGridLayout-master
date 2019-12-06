@@ -46,5 +46,22 @@
     Courage is one step ahead of fear. \n– Coleman Young \n\n
     Pain is temporary. Quitting lasts forever. \n– Lance Armstrong \n\n
     It’s not about perfect. It’s about effort. \n– Jillian Michaels \n\n
-    Challenges are what make life interesting. Overcoming them is what makes them meaningful. \n\n</string>
+    Challenges are what make life interesting. Overcoming them is what makes them meaningful. \n\n
+    Blessed are those who can give without remembering and take without forgetting. \n--Anonymous \n\n
+    Innovation distinguishes between a leader and a follower. \n- Steve Jobs \n\n
+    Stop being afraid of what could go wrong and think of what could go right. \n\n
+    You should never regret anything in life. If it’s good, it’s wonderful. If it’s bad, it is experience. \n\n
+    If you have the power to make someone happy, do it. The world needs more of that. \n\n
+    Don’t be afraid to give up the good and go for great. \n\n
+    Don’t talk, just act. Don’t say, just show. Don’t promise, just prove.\n\n
+    Discipline is doing what needs to be done, even if you don’t want to. \n\n
+    Work while they sleep. Learn while they party. Save while they spend. Live like they dream. \n\n</string>
+
+    <string name="scale">Taking a look at what your score means:\n\n10 - 20: Green zone\t\t\tIn the clear!\n21 - 30: Yellow zone\t\tThings are looking good!\n31 - 40: Orange zone\t\tThings could be better!\n41 - 50: Red zone\t\t\t\tSeek help </string>
+    <string name="OutsideResources">If you need extra assistance, please use the resources below: \n\n
+    National Suicide Hotline\n\t(800)273-TALK(8255)\n\n
+    Crisis Hotline\n\t Text NAMI to 741-741\n\n
+    National Aliance for Mental Health\n\tnami.org\n\n
+    Addictions\n\taddictioncenter.com\n\n
+    Remember to talk to friend and loved ones if you feel like they too are feeling under the weather as everyone has their low points.</string>
 </resources>

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -15,11 +16,11 @@ public class ActivityOne extends AppCompatActivity {
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
     FirebaseUser user = mAuth.getCurrentUser();
 
-    String name = user.getDisplayName();
     String email = user.getEmail();
-    String phone_number = user.getPhoneNumber();
 
-    TextView textView3, textView9, textView11;
+    Button mLogout;
+
+    TextView textView9;
 
 
 
@@ -27,20 +28,21 @@ public class ActivityOne extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_one);
-        textView3 = (TextView)findViewById(R.id.textView3);
-        textView3.setText(name);
 
         textView9 = (TextView)findViewById(R.id.textView9);
         textView9.setText(email);
 
-        textView11 = (TextView)findViewById(R.id.textView11);
-        textView11.setText(phone_number);
+        mLogout = findViewById(R.id.logoutbtn);
+
+        mLogout.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick (View v) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getApplicationContext(), Login.class));
+            }
+        });
+
     }
 
 
-    public void logout (View view){
-        FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(getApplicationContext(), Login.class));
-        finish();
-    }
 }
