@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#4EC7F7"
     tools:context=".Chat">
 
     <TextView
@@ -15,6 +16,7 @@
         android:gravity="bottom"
         android:hint="@string/chat_message_will_appear_here"
         android:textAlignment="gravity"
+        android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/editText"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,15 +56,17 @@
     <TextView
         android:id="@+id/ReceivingUser"
         android:layout_width="415dp"
-        android:layout_height="46dp"
+        android:layout_height="50dp"
         android:layout_marginStart="3dp"
         android:layout_marginTop="13dp"
         android:layout_marginEnd="3dp"
         android:background="#171799"
+        android:fontFamily="casual"
         android:hint="@string/ReceivingUser"
         android:text="@string/ReceivingUser"
+        android:textAlignment="center"
         android:textColor="#E9EDF0"
-        android:textSize="20sp"
+        android:textSize="28sp"
         app:layout_constraintBottom_toTopOf="@+id/Text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
