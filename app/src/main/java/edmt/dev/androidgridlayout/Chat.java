@@ -36,19 +36,33 @@ public class Chat extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-
-               // myText.setText(dataSnapshot.getValue().toString());
+                //myText.setText(dataSnapshot.getValue().toString());
                 String[] Messages = dataSnapshot.getValue().toString().split(",");
                 myText.setText("");
 
+                //String[] firstMessage = Messages[0].split("=");
+                //myText.append(firstMessage[2] + "\n");
+
                 for(int i = 0; i < Messages.length; i++)
                 {
-                    if(i > 0)
-                    {
+                    int len = Messages.length - 1;
                     String[] finalMessage = Messages[i].split("=");
-                    myText.append(finalMessage[1] + "\n");
+                    if(i == len){
+                        String last = finalMessage[1];
+                        String lastMessage = last.substring(0,last.length() - 2);
+                        myText.append(lastMessage + "\n");
+                    }else {
+                        if (finalMessage.length == 2) {
+                            myText.append(finalMessage[1] + "\n");
+                        }
+                        if (finalMessage.length == 3) {
+                            myText.append(finalMessage[2] + "\n");
+                        }
+
                     }
+                    //myText.append(finalMessage[1] + "\n");
                 }
+
 
             }
 
